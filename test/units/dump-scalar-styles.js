@@ -16,7 +16,7 @@ test('quoted scalars', function () {
   assert.equal(yaml.safeDump('quoted"scalar'), '\'quoted"scalar\'\n');
   assert.equal(yaml.safeDump('quoted\'scalar'), '"quoted\'scalar"\n');
   assert.equal(yaml.safeDump('a\nb\u0001c'), '"a\\nb\\x01c"\n');
-  assert.equal(yaml.safeDump('a\nb \n c'), '"a\\nb \\n c"\n');
+  assert.equal(yaml.safeDump('a\nb \n c'), '|-\na\nb \n c\n');
 });
 
 test('literal', function () {
